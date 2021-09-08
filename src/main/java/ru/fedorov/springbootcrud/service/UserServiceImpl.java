@@ -7,7 +7,7 @@ import ru.fedorov.springbootcrud.dao.UserRepository;
 import ru.fedorov.springbootcrud.model.User;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
@@ -34,5 +34,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getById(long id) {
         return userRepository.getById(id);
+    }
+
+    @Override
+    public User getByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }
